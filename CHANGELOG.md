@@ -2,6 +2,147 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.78.1](https://github.com/serverless/serverless/compare/v1.78.0...v1.78.1) (2020-08-04)
+
+### Bug Fixes
+
+- **Config Schema:**
+  - Ensure schema for core properties (`frameworkVersion` and `disabledDeprecations`) ([#8044](https://github.com/serverless/serverless/issues/8044)) ([a3f624e](https://github.com/serverless/serverless/commit/a3f624e25cb257afc5d8668a8a5e63e6c67d8827)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Fix errors normalization for `oneOf` case ([#8044](https://github.com/serverless/serverless/issues/8044)) ([f4803ee](https://github.com/serverless/serverless/commit/f4803ee363253ebefc1c509d8d808db53bcc6e7a)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Fix errors normalization with external refs ([#8044](https://github.com/serverless/serverless/issues/8044)) ([d171f54](https://github.com/serverless/serverless/commit/d171f5476d260f90ff0fe9916aed4a0eea49dfde)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Maintanance Improvements
+
+- Expose `isStandalone` for metrics ([#8045](https://github.com/serverless/serverless/issues/8045)) ([0ad5cd7](https://github.com/serverless/serverless/commit/0ad5cd7a6333e96b0a041e688bb5eb0a26b98c30)) ([Mariusz Nowak](https://github.com/medikoo))
+
+## [1.78.0](https://github.com/serverless/serverless/compare/v1.77.1...v1.78.0) (2020-08-03)
+
+### Features
+
+- Schema based validation of service config ([#7335](https://github.com/serverless/serverless/issues/7335)) ([268f714](https://github.com/serverless/serverless/commit/268f714357ea909e6897d3377331ed7b1a38e5f5)) ([Petr Reshetin](https://github.com/preshetin) & [Mariusz Nowak](https://github.com/medikoo))
+- **AWS Lambda:** Support `maximumEventAge` and `maximumRetryAttempts` ([#7987](https://github.com/serverless/serverless/issues/7987)) ([8573ec1](https://github.com/serverless/serverless/commit/8573ec1e50e4d49baf1a5ae178c32851902f073d)) ([Piotr Grzesik](https://github.com/pgrzesik))
+
+### Bug Fixes
+
+- **AWS EventBridge:**
+  - Fix handling of events removal ([#8004](https://github.com/serverless/serverless/issues/8004)) ([41d19b3](https://github.com/serverless/serverless/commit/41d19b3834609ae6bf96439df554b99a082ccb0f)) ([Daniil Bratchenko](https://github.com/bratchenko))
+  - Fix attaching lambdas to "default" stage ([#7995](https://github.com/serverless/serverless/issues/7995)) ([b53f080](https://github.com/serverless/serverless/commit/b53f080a4dfc8439333090d2a177ac0272b6d1fe)) ([Pavle Portic](https://github.com/TheEdgeOfCat))
+- **Templates:** Ensure missing Kotlin dependencies ([#8010](https://github.com/serverless/serverless/issues/8010)) ([15fae3b](https://github.com/serverless/serverless/commit/15fae3bfb286dfdf72b14f7443a5683d0e4db7de)) ([Diego Marzo](https://github.com/diegomarzo))
+- Set `versionFunctions` to true only in AWS provider case ([9897120](https://github.com/serverless/serverless/commit/9897120a8adae59205e5d84d1bdca442621f51b4)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### [1.77.1](https://github.com/serverless/serverless/compare/v1.77.0...v1.77.1) (2020-07-28)
+
+### Bug Fixes
+
+- **AWS Local Invocation:** Ensure java wrappers are moved to runtimeWrappers ([#7999](https://github.com/serverless/serverless/issues/7999)) ([03531d8](https://github.com/serverless/serverless/commit/03531d8bc6bce44a445e34e5046eaef6d95d0aa1)) ([Yuji Yamano](https://github.com/yyamano))
+- **AWS Credentials:**
+  - Improve AWS SDK workaround ([#8002](https://github.com/serverless/serverless/issues/8002)) ([32cde98](https://github.com/serverless/serverless/commit/32cde98750a91449d352187a8e2f042a38eb3f64)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Improve credentials error recognition ([#8002](https://github.com/serverless/serverless/issues/8002)) ([863bc51](https://github.com/serverless/serverless/commit/863bc51904778dbfcb984c663517172c8292ff9d)) ([Mariusz Nowak](https://github.com/medikoo))
+
+## [1.77.0](https://github.com/serverless/serverless/compare/v1.76.1...v1.77.0) (2020-07-27)
+
+### Features
+
+- **Templates:** Add `aws-kotlin-jvm-gradle-kts` template ([#7992](https://github.com/serverless/serverless/issues/7992)) ([4727216](https://github.com/serverless/serverless/commit/4727216760e16d5a11402f74fdcf38c70a8634be)) ([Diego Marzo](https://github.com/diegomarzo))
+
+### Bug Fixes
+
+- **Standalone:** Ensure local invocation wrappers are accessible ([#7982](https://github.com/serverless/serverless/issues/7982)) ([527233d](https://github.com/serverless/serverless/commit/527233d2637977544169e6799d9359c86425de18)) ([Mariusz Nowak](https://github.com/medikoo))
+- Fix aws-sdk workaround ([#7984](https://github.com/serverless/serverless/issues/7984)) ([de38640](https://github.com/serverless/serverless/commit/de386405b206d3ebace105992e9c7eb7ad6d7f94)) ([Mariusz Nowak](https://github.com/medikoo))
+- **Templates:** Add aws-lambda-java-events support to Java ([#7986](https://github.com/serverless/serverless/issues/7986)) ([ab99b65](https://github.com/serverless/serverless/commit/ab99b657a3c613b3e9ba072e084d159f5ac6c073)) ([Yuji Yamano](https://github.com/yyamano))
+- Recognize final DELETE_COMPLETE event with verbose flag ([#7979](https://github.com/serverless/serverless/issues/7979)) ([e980625](https://github.com/serverless/serverless/commit/e980625f586f55da4559b362a9dcd7275e9001bb)) ([devops hipster in training.](https://github.com/herebebogans))
+- **AWS API Gateway:** Ensure correct type for StatusCode property ([#7977](https://github.com/serverless/serverless/issues/7977)) ([d0edb5d](https://github.com/serverless/serverless/commit/d0edb5d85991bd6563610c768da80e0791735bc8)) ([Lucas Astrada](https://github.com/Undre4m))
+
+### [1.76.1](https://github.com/serverless/serverless/compare/v1.76.0...v1.76.1) (2020-07-23)
+
+### Bug Fixes
+
+- Ensure to package CLI script ([a687e91](https://github.com/serverless/serverless/commit/a687e9190d861f11ec1fc9a194335b3012b246b9)) ([Mariusz Nowak](https://github.com/medikoo))
+
+## [1.76.0](https://github.com/serverless/serverless/compare/v1.75.1...v1.76.0) (2020-07-23)
+
+### Features
+
+- **AWS ALB:** Support health check configuration for target groups ([#7947](https://github.com/serverless/serverless/issues/7947)) ([a2f977c](https://github.com/serverless/serverless/commit/a2f977c8ced67e5002ce5735ce30d44cc36b17be)) ([David Septimus](https://github.com/DavidSeptimus))
+- **Templates:** Upgrade `gradle-wrapper` and `gradle` in Java runtime templates ([#7972](https://github.com/serverless/serverless/issues/7972)) ([6da0964](https://github.com/serverless/serverless/commit/6da09649bb6cbc9074d5dec574856acc8eaa388d)) ([Yuji Yamano](https://github.com/yyamano))
+
+### Bug Fixes
+
+- Fix AWS missing credentials handling ([#7963](https://github.com/serverless/serverless/issues/7963)) ([7af0cd8](https://github.com/serverless/serverless/commit/7af0cd8c280e0f4fc374e859c0223bc0c3455f63)) ([Mariusz Nowak](https://github.com/medikoo))
+- Fix packaged files permissions ([#7965](https://github.com/serverless/serverless/issues/7965)) ([cae2885](https://github.com/serverless/serverless/commit/cae28851df435fd9eb0d651fde520862125d5deb)) ([Mariusz Nowak](https://github.com/medikoo))
+- **AWS Local Invocation:** Add `java11` support. ([#7956](https://github.com/serverless/serverless/issues/7956)) ([dc1edc1](https://github.com/serverless/serverless/commit/dc1edc10c0088f57b104b8296df6f78d6205b4a0)) ([Yuji Yamano](https://github.com/yyamano))
+- **Templates:**
+  - Fix java `invoke-bridge` build error handling ([#7968](https://github.com/serverless/serverless/issues/7968)) ([87e7480](https://github.com/serverless/serverless/commit/87e7480663fe7d3513687e9127fdca8b143cf1d6)) ([Yuji Yamano](https://github.com/yyamano))
+  - Fix incomplete migration into dayjs from moment ([#7961](https://github.com/serverless/serverless/issues/7961)) ([d5ce246](https://github.com/serverless/serverless/commit/d5ce24681e3a75eccce290a52e045664878b9387)) ([Yuji Yamano](https://github.com/yyamano))
+  - Set `ContextClassLoader` for `groovy` and `clojure` ([#7955](https://github.com/serverless/serverless/issues/7955)) ([25263fd](https://github.com/serverless/serverless/commit/25263fd473584e51c81bb3c5cedd4b9005dfd984)) ([Yuji Yamano](https://github.com/yyamano))
+  - Upgrade Java 3rd party libraries used for invokeLocal([#7930](https://github.com/serverless/serverless/issues/7930)) ([851b856](https://github.com/serverless/serverless/commit/851b85629dbff510ceb1865fd9a1a48a75940ebd)) ([Yuji Yamano](https://github.com/yyamano))
+
+### Maintanance Improvements
+
+- Remove no longger needed Node.js deprecation logs supression ([#7964](https://github.com/serverless/serverless/issues/7964)) ([af89ab8](https://github.com/serverless/serverless/commit/af89ab8994aaaa12e578b2bad72ddc8a948e765c)) ([Mariusz Nowak](https://github.com/medikoo))
+- **CLI:**
+  - Cleanup components CLI resolution logic ([#7964](https://github.com/serverless/serverless/issues/7964)) ([cf1d51d](https://github.com/serverless/serverless/commit/cf1d51dbb9b218dfc1cebfa1bf3c5f6eb1ab248b))([Mariusz Nowak](https://github.com/medikoo))
+  - Seclude Framework CLI script ([#7964](https://github.com/serverless/serverless/issues/7964)) ([dc826b4](https://github.com/serverless/serverless/commit/dc826b4fdd387bfef0cc74a69e0370815011901b))([Mariusz Nowak](https://github.com/medikoo))
+
+### [1.75.1](https://github.com/serverless/serverless/compare/v1.75.0...v1.75.1) (2020-07-16)
+
+### Bug Fixes
+
+- **CLI:** Ensure `--version` is only top level command option ([#7949](https://github.com/serverless/serverless/issues/7949)) ([1f7534c](https://github.com/serverless/serverless/commit/1f7534c4d89a0e37e61a8eea76f6f0241909d265)) ([Mariusz Nowak](https://github.com/medikoo))
+- **AWS Deploy:** Fix resolution of SLS_AWS_REQUEST_MAX_RETRIES setting ([da1b75a](https://github.com/serverless/serverless/commit/da1b75ac889f99a82afa5606e4e0f1f7f3ee2bcf)) ([Mariusz Nowak](https://github.com/medikoo))
+
+## [1.75.0](https://github.com/serverless/serverless/compare/v1.74.1...v1.75.0) (2020-07-15)
+
+### Features
+
+- **AWS HTTP API:**
+  - Allow use of CF ImportValue for httpApi id ([#7905](https://github.com/serverless/serverless/issues/7905)) ([5a444c4](https://github.com/serverless/serverless/commit/5a444c415ce31b2c219be47390be165a8da233ea)) ([Frédéric Barthelet](https://github.com/fredericbarthelet))
+  - Deprecate payload 1.0 default ([#7919](https://github.com/serverless/serverless/issues/7919)) ([ec954f6](https://github.com/serverless/serverless/commit/ec954f61220f48b379bf4903820bdbb7c2352caf)) ([andreizet](https://github.com/andreizet))
+- **AWS API Gateway:** Support integration mapping of request headers [#7897](https://github.com/serverless/serverless/issues/7897) ([56b335f](https://github.com/serverless/serverless/commit/56b335f99930aa9c2a35ce28e68dfea6d5bf3b7f)) ([Ben Arena](https://github.com/benarena))
+- **AWS Deploy:** Support customization of request retries count ([6c2fabf](https://github.com/serverless/serverless/commit/6c2fabf9b98fea921a497c7ad15f4943e78c9b73)) ([Mariusz Nowak](https://github.com/medikoo))
+- **Templates:**
+  - Improve TypeScript template ([#7934](https://github.com/serverless/serverless/issues/7934)) ([5e322c8](https://github.com/serverless/serverless/commit/5e322c87358cd33e7c703ae3ab5e9f1cf863c7e1)) ([Frédéric Barthelet](https://github.com/fredericbarthelet))
+  - Upgrade azure-nodejs template ([#7918](https://github.com/serverless/serverless/issues/7918)) ([a88cf00](https://github.com/serverless/serverless/commit/a88cf00ae7d306341771d9445f3aba6f06d46fa7)) ([Ian Anderson](https://github.com/getfatday))
+- Deprecate not maintained Node.js versions ([#7918](https://github.com/serverless/serverless/issues/7918)) ([a1f2fdb](https://github.com/serverless/serverless/commit/a1f2fdb5cf077a51d7427dd7fc803d6f60dd5cc9)) ([Mariusz Nowak](https://github.com/medikoo))
+- Expose `logDeprecation` through which plugins may signal deprecations [#7941](https://github.com/serverless/serverless/issues/7941) ([f444a8d](https://github.com/serverless/serverless/commit/f444a8d0a11434d89f1e2b2df5045850c45664c9)) ([Mariusz Nowak](https://github.com/medikoo))
+- Send list of sevice npm dependencies for notifications generator [#7940](https://github.com/serverless/serverless/issues/7940) ([dba0548](https://github.com/serverless/serverless/commit/dba05481d10d0ffbf198990c9b460bb0b0ad24d2)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Bug Fixes
+
+- **CLI:**
+  - Ensure to show help and version in context of invalid service [#7924](https://github.com/serverless/serverless/issues/7924) ([3ffa549](https://github.com/serverless/serverless/commit/3ffa54918342aeb9c334631c6f710aba234ba241)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Show interactive help unconditionally on `--help-interactive` [#7924](https://github.com/serverless/serverless/issues/7924) ([ff0af1e](https://github.com/serverless/serverless/commit/ff0af1e6ac8b89b4d610c141c78fe0fea843a5de)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Show version info unconditionally on `-v` or `--version` [#7924](https://github.com/serverless/serverless/issues/7924) ([c042dd5](https://github.com/serverless/serverless/commit/c042dd5144e4e283e565da97933d03bc70b3c8e9)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Communicate access to Components CLI [#7942](https://github.com/serverless/serverless/issues/7942) ([79b4718](https://github.com/serverless/serverless/commit/79b4718dec5de1d567af25d1abd0e46d87ff1c6e)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Ensure deprecation logs support mute settings from service config [#7941](https://github.com/serverless/serverless/issues/7941) ([4e69c76](https://github.com/serverless/serverless/commit/4e69c76e07a862981e8a9ea9011c98098c9da347)) ([Mariusz Nowak](https://github.com/medikoo))
+- **Templates:** Fix `PackageReference` in _aws-fsharp_ template ([#7914](https://github.com/serverless/serverless/issues/7914)) ([7848b6d](https://github.com/serverless/serverless/commit/7848b6d033ec4a7c64186e5f2306351128100be4)) ([Matt Davis](https://github.com/mattsonlyattack))
+- Improve error handling in config file resolution [#7924](https://github.com/serverless/serverless/issues/7924) ([de2c68d](https://github.com/serverless/serverless/commit/de2c68d02312f047aa7f83b0b339074b40df7854)) ([Mariusz Nowak](https://github.com/medikoo))
+- Throw operational error as operational [#7924](https://github.com/serverless/serverless/issues/7924) ([f965e44](https://github.com/serverless/serverless/commit/f965e446946048691889a7f3723c19ac747b8fe2)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Maintanance Improvements
+
+- **`lodash` replacement:**
+  - Replace `_.concat` with `array.concat` ([#7851](https://github.com/serverless/serverless/issues/7851)) ([fce0b18](https://github.com/serverless/serverless/commit/fce0b1886448d91be21aa64b778c98d95bb47b87)) ([RT](https://github.com/RT1918))
+  - Replace `_.findKey` with `Object.keys(object).find` ([#7881](https://github.com/serverless/serverless/issues/7881)) ([d6cf036](https://github.com/serverless/serverless/commit/d6cf036c1647ce68d75b15e831e00f1cec6a97be)) ([Duc Nguyen](https://github.com/vietduc01100001))
+  - Replace `_.has` with better counterparts ([#7915](https://github.com/serverless/serverless/issues/7915)) ([7bbd04a](https://github.com/serverless/serverless/commit/7bbd04a6933c1631646f16670e3d85c357450e7a)) ([andreizet](https://github.com/andreizet))
+  - Replace `_.keyBy` with native constructs ([#7882](https://github.com/serverless/serverless/issues/7882)) ([e7163ce](https://github.com/serverless/serverless/commit/e7163ceaaceeb93971350b7ccd9cc618b15e4f9b)) ([Duc Nguyen](https://github.com/vietduc01100001))
+  - Replace `_.some` usage with `array.some` ([#7901](https://github.com/serverless/serverless/issues/7901)) ([75bf185](https://github.com/serverless/serverless/commit/75bf185785dc2b0a91b6500f353df92990e90f47)) ([Piotr Grzesik](https://github.com/pgrzesik))
+  - Replace `_.toString` with native `String` ([#7893](https://github.com/serverless/serverless/issues/7893)) ([028e467](https://github.com/serverless/serverless/commit/028e46720251901279b8230cf76deca721ee4ae6)) ([Anh Dev](https://github.com/anhdevit))
+
+### [1.74.1](https://github.com/serverless/serverless/compare/v1.74.0...v1.74.1) (2020-06-29)
+
+### Bug Fixes
+
+- **AWS Deploy:** Ensure no duplicate (case-insensitive) stack tags ([#7887](https://github.com/serverless/serverless/issues/7887)) ([71919f1](https://github.com/serverless/serverless/commit/71919f1d1f34386fa3429e3e47196c849218f82b)) ([MickVanDuijn](https://github.com/MickVanDuijn))
+- **Standalone:**
+  - Ensure reliable access from China ([#7891](https://github.com/serverless/serverless/issues/7891)) ([6fccede](https://github.com/serverless/serverless/commit/6fccedea4ac5a3a546d36b19d2e0701defd9ed85)) ([Mariusz Nowak](https://github.com/medikoo))
+  - Support SLS_GEO_LOCATION env var ([#7891](https://github.com/serverless/serverless/issues/7891)) ([474df11](https://github.com/serverless/serverless/commit/474df11288a0431bb14947c4a08ae34edecb4164)) ([Mariusz Nowak](https://github.com/medikoo))
+
+### Maintanance Improvements
+
+- **`lodash` replacement:**
+  - Remove `_.isInteger` ([#7878](https://github.com/serverless/serverless/issues/7878)) ([3b19a5a](https://github.com/serverless/serverless/commit/3b19a5a6b191fdb0dac5a81d1244159e0da9e0bd)) ([Dai Van Nguyen](https://github.com/nvdai2401))
+
 ## [1.74.0](https://github.com/serverless/serverless/compare/v1.73.1...v1.74.0) (2020-06-26)
 
 ### Features
